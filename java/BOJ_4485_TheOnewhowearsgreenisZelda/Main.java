@@ -31,11 +31,12 @@ public class Main {
 			
 			for(int i=0;i<T;i++) {
 				for(int j=0;j<T;j++) {
-					dp[i][j] = 10;
+					dp[i][j] = Integer.MAX_VALUE;
 				}
 			}
 			
 			dp[0][0]=map[0][0];
+			
 			Queue<int[]> list = new LinkedList<int[]>();
 			list.add(new int[] {0,0});
 			
@@ -50,18 +51,18 @@ public class Main {
 						continue;
 					}
 					
-					if(dp[newY][newX]==10 || dp[newY][newX]>dp[temp[1]][temp[0]]+map[newY][newX]) {
+					if(dp[newY][newX]>dp[temp[1]][temp[0]]+map[newY][newX]) {
 						dp[newY][newX]=dp[temp[1]][temp[0]]+map[newY][newX];
 						list.add(new int[] {newX, newY});
 					}
 				}
 			}
 			
-			for(int i=0;i<T;i++) {
-				for(int j=0;j<T;j++) {
-					System.out.print(dp[i][j]+" ");
-				}System.out.println();
-			}
+//			for(int i=0;i<T;i++) {
+//				for(int j=0;j<T;j++) {
+//					System.out.print(dp[i][j]+" ");
+//				}System.out.println();
+//			}
 			
 			System.out.println("Problem "+testcase+": "+dp[T-1][T-1]);
 			testcase++;	
