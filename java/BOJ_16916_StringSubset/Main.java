@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class Main {
-
+//https://m.blog.naver.com/kks227/220917078260
 	static int[] failtable; // 최대 일치길이 저장 테이블
 
 	public static void main(String[] args) throws IOException {
