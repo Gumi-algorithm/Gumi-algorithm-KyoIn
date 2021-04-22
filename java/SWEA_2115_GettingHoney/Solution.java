@@ -62,7 +62,7 @@ public class Solution {
 				// 지금 행만 보기
 				for (int j2 = j + M; j2 < N - M + 1; j2++) {
 					LinkedList<int[]> worker2 = new LinkedList<>();
-					for (int a = j2; a < M; a++) {
+					for (int a = j2; a < j2+M; a++) {
 						worker2.add(new int[] { a, i, map[i][a] });
 					}
 					check(worker1, worker2);
